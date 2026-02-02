@@ -1,39 +1,74 @@
-# ☕ Dirty Cafe Sales Dashboard (Power BI)
+# ☕ Dirty Cafe Sales – Executive Dashboard (Power BI)
 
 ## 📌 Project Overview
-This project presents an **Executive Sales Dashboard** built using **Power BI**, based on a dirty café sales dataset.  
-The main objective is to demonstrate **data modeling, data cleaning, DAX measures, and business storytelling** through an interactive dashboard.
+This project presents an **Executive Sales Dashboard** built using **Power BI**, based on a publicly available café sales dataset.
 
-The dashboard provides high-level insights into sales performance, customer behavior, product contribution, and payment methods to support data-driven decision-making.
+The objective of this project is to demonstrate an **end-to-end Business Intelligence workflow**, including:
+- Data cleaning and preparation
+- Star schema data modeling
+- DAX measure creation
+- Executive-level dashboard design
+- Business insight storytelling
+
+To focus on insights and presentation, the final dashboard is shared as a **PDF report** rather than the Power BI (.pbix) file.
 
 ---
 
-## 📸 Dashboard Preview
+## 🧱 Data Source & Attribution
 
-![Dirty Cafe Sales Dashboard](https://github.com/user-attachments/assets/c5d2c31e-ef0d-43c8-a1ff-5dd7ba59c01c)
+### Data Source
+- **Dataset Name:** Cafe Sales – Dirty Data for Cleaning Training  
+- **Author:** Ahmed Mohamed  
+- **Source:** Kaggle  
+- **Link:** https://www.kaggle.com/datasets/ahmedmohamed2003/cafe-sales-dirty-data-for-cleaning-training  
 
 ---
 
-## 📊 Dashboard Highlights
-Key metrics and insights included in the dashboard:
+### Dataset Description
+The dataset contains **simulated transaction-level sales data** for a café business.  
+It was intentionally designed as **dirty data** for training and practice purposes.
 
-- **Total Sales**
-- **Total Transactions**
-- **Total Quantity Sold**
-- **Average Order Value (AOV)**
-- **Month-over-Month (MoM) Growth**
-- **Sales Trend by Month**
-- **Top Performing Items**
-- **Sales Contribution by Item**
-- **Transactions by Payment Method**
-- **Performance by Location (In-store vs Takeaway)**
+The dataset includes:
+- Transaction ID  
+- Item sold (e.g., Coffee, Cake, Cookie)  
+- Quantity and price per unit  
+- Total amount spent  
+- Payment method  
+- Sales location (In-store / Takeaway)  
+- Transaction date  
+
+To reflect real-world data challenges, the dataset contains:
+- Missing values  
+- Inconsistent categorical values (e.g., `UNKNOWN`)  
+- Invalid numeric entries (e.g., `ERROR`)  
+- Data type inconsistencies  
+
+---
+
+### Data Usage Disclaimer
+This project is created for **educational and portfolio purposes only**.  
+The dataset is publicly available and **does not represent the actual performance of any real café or business**.  
+No personally identifiable information (PII) is included.
+
+---
+
+## 🧹 Data Preparation
+Data preparation and cleaning were performed to ensure analytical accuracy and usability.
+
+Key steps include:
+- Handling missing and invalid values
+- Standardizing categorical fields
+- Correcting or recalculating sales-related fields
+- Creating clean dimension tables for analysis
+
+All transformations were performed using **Power Query**.
 
 ---
 
 ## 🧱 Data Model
-The project uses a **Star Schema** data model for optimal performance and scalability.
+The dashboard is built using a **Star Schema** data model to ensure performance and scalability.
 
-![Data Model Imge](https://github.com/user-attachments/assets/23436014-5259-4aed-b419-32dba1e7735b)
+![Data Model](https://github.com/user-attachments/assets/0f564700-77c1-41b3-86ff-8d26cc0dd7c9)
 
 ### Fact Table
 - **Fact_Sales**
@@ -43,49 +78,50 @@ The project uses a **Star Schema** data model for optimal performance and scalab
   - Payment Method ID  
   - Quantity  
   - Price Per Unit  
-  - Total Spent  
+  - Total Sales  
 
 ### Dimension Tables
-- **Dim_Date** – Date hierarchy for time analysis  
-- **Dim_Item** – Product-level analysis  
-- **Dim_Location** – In-store vs Takeaway  
-- **Dim_Payment** – Payment method analysis  
+- **Dim_Date** – Date and time attributes  
+- **Dim_Item** – Menu item details  
+- **Dim_Location** – Sales channel (In-store / Takeaway)  
+- **Dim_Payment** – Payment method information  
 
-All relationships follow **1-to-many, single-direction** best practices.
-
----
-
-## 🧹 Data Preparation
-The dataset contains several data quality issues, including:
-- Missing values
-- `UNKNOWN` categories
-- Incorrect or error values in sales fields
-
-Data cleaning and transformation were performed using **Power Query**, and key metrics were recalculated using **DAX** to ensure accuracy.
+All relationships follow **one-to-many, single-direction** best practices.
 
 ---
 
-## 🧮 Key DAX Measures
-Examples of core measures used in the dashboard:
-
+## 🧮 Key Metrics & DAX Measures
+The dashboard includes key business metrics such as:
 - Total Sales
 - Total Transactions
-- Total Quantity
+- Total Quantity Sold
 - Average Order Value (AOV)
-- Month-over-Month Growth (%)
-- Sales Contribution (%)
+- Month-over-Month (MoM) Growth
+- Sales Contribution by Item
 
-These measures enable flexible slicing by date, item, location, and payment method.
+These measures allow dynamic filtering across date, product, location, and payment method dimensions.
 
 ---
 
-## 🎯 Business Value
-This dashboard helps stakeholders to:
-- Monitor overall sales performance
-- Identify top-selling and underperforming items
-- Understand customer payment preferences
-- Compare sales channels (In-store vs Takeaway)
-- Track growth trends over time
+## 📊 Dashboard Overview
+The executive dashboard provides insights into:
+- Overall sales performance
+- Monthly sales trends
+- Top-performing menu items
+- Sales contribution by product
+- Payment method preferences
+- Sales distribution by location
+
+The layout is designed to support **quick decision-making** by business stakeholders.
+
+---
+
+## 🎯 Business Insights
+Key insights derived from the dashboard include:
+- Sales show consistent month-over-month growth
+- A small number of products contribute a large share of total revenue
+- Digital payment methods slightly outperform cash transactions
+- In-store and takeaway sales volumes are relatively balanced
 
 ---
 
@@ -97,6 +133,12 @@ This dashboard helps stakeholders to:
 
 ---
 
+## 📸 Dashboard Preview
+
+![Dirty Cafe Sales Dashboard](https://github.com/user-attachments/assets/a1381f80-dc8a-4fc9-8892-43e5f808e389)
+
+---
+
 ## 👤 Author
-Created as a data analytics portfolio project to demonstrate end-to-end BI development skills.
+This project was created as part of a **data analytics portfolio** to demonstrate practical skills in business intelligence, data modeling, and dashboard storytelling.
 
